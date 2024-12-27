@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <application>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:requestLegacyExternalStorage="true">
         <activity
             android:name=".ui.audio.AudioPickerActivity"
             android:exported="false" />
@@ -10,6 +16,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.images.ImagePickerActivity"
+            android:theme="@style/ActivityStyle"
             android:exported="false" />
         <activity
             android:name=".ui.files.FilePickerActivity"

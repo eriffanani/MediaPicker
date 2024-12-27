@@ -1,14 +1,30 @@
 plugins {
-    id("com.android.library")
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.ksp)
+    id("maven-publish")
 }
+
+/*afterEvaluate {
+    configure<PublishingExtension> {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.eriffanani"
+                artifactId = "media-picker"
+                version = "1.0.0"
+                afterEvaluate {
+                    artifact(tasks.getByName("bundleReleaseAar"))
+                }
+            }
+        }
+    }
+}*/
 
 android {
     namespace = "com.erif.mediapicker"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 28
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -27,49 +43,48 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("androidx.activity:activity:1.9.0")
-    implementation("androidx.window:window:1.3.0")
-    implementation("com.google.android.material:material:1.12.0")
-    implementation("androidx.fragment:fragment:1.8.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.gridlayout:gridlayout:1.0.0")
-    implementation("com.google.android.flexbox:flexbox:3.0.0")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.window)
+    implementation(libs.material)
+    implementation(libs.androidx.fragment)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.gridlayout)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.flexbox)
+    ksp(libs.databinding.compiler)
 
     // Navigation
-    val nav = "androidx.navigation:navigation"
-    val navVersion = "2.7.7"
-    implementation("$nav-fragment:$navVersion")
-    implementation("$nav-ui:$navVersion")
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
 
     // Image Processing
-    val glide = "com.github.bumptech.glide"
-    val glideVersion = "4.16.0"
-    implementation("$glide:glide:$glideVersion")
-    implementation("jp.wasabeef:glide-transformations:4.3.0")
-    ksp("$glide:ksp:$glideVersion")
+    implementation(libs.glide)
+    implementation(libs.glide.transformations)
+    ksp(libs.glide.ksp)
 
-    val media = "androidx.media3:media3"
-    val mediaVersion = "1.3.1"
-    implementation("$media-exoplayer:$mediaVersion")
-    implementation("$media-ui:$mediaVersion")
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
 
     // Other
-    val other = "com.github.eriffanani"
-    implementation("$other:ContentLoader:1.2.0")
-    implementation("$other:Snacking2:1.1.3")
-    implementation("$other:PreventDoubleClick:1.0.0")
-    implementation("$other:QuickState:1.4.5")
-    implementation("$other:Toastyle:1.0.0")
-    implementation("$other:Countdown:1.4.0")
+    implementation(libs.content.loader)
+    implementation(libs.snacking2)
+    implementation(libs.preventdoubleclick)
+    implementation(libs.quickstate)
+    implementation(libs.toastyle)
+    implementation(libs.countdown)
     // Log
-    implementation("com.jakewharton.timber:timber:5.0.1")
+    implementation(libs.timber)
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }

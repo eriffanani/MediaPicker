@@ -1,0 +1,64 @@
+[versions]
+activity = "1.9.3"
+agp = "8.7.3"
+android-kotlin = "2.0.21"
+appcompat = "1.7.0"
+constraint-layout = "2.2.0"
+content-loader = "1.2.0"
+core-ktx = "1.15.0"
+countdown = "1.4.0"
+databinding-compiler = "3.1.4"
+espresso-core = "3.6.1"
+flexbox = "3.0.0"
+fragment = "1.8.5"
+glide-transformations = "4.3.0"
+glide = "4.16.0"
+gridlayout = "1.0.0"
+junit = "4.13.2"
+junit-version = "1.2.1"
+ksp = "2.0.0-1.0.22"
+material = "1.12.0"
+media = "1.5.1"
+nav = "2.8.5"
+preventdoubleclick = "1.0.0"
+quickstate = "1.4.5"
+recyclerview = "1.3.2"
+snacking2 = "1.1.3"
+timber = "5.0.1"
+window = "1.3.0"
+
+[libraries]
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraint-layout" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
+androidx-gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "gridlayout" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit-version" }
+androidx-media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "media" }
+androidx-media3-ui = { group = "androidx.media3", name = "media3-ui", version.ref = "media" }
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "nav" }
+androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "nav" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+androidx-window = { group = "androidx.window", name = "window", version.ref = "window" }
+content-loader = { group = "com.github.eriffanani", name = "ContentLoader", version.ref = "content-loader" }
+countdown = { group = "com.github.eriffanani", name = "Countdown", version.ref = "countdown" }
+databinding-compiler = { module = "com.android.databinding:compiler", version.ref = "databinding-compiler" }
+flexbox = { group = "com.google.android.flexbox", name = "flexbox", version.ref = "flexbox" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-transformations = { group = "jp.wasabeef", name = "glide-transformations", version.ref = "glide-transformations" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+glide-ksp = { group = "com.github.bumptech.glide", name = "ksp", version.ref = "glide" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+preventdoubleclick = { group = "com.github.eriffanani", name = "PreventDoubleClick", version.ref = "preventdoubleclick" }
+quickstate = { group = "com.github.eriffanani", name = "QuickState", version.ref = "quickstate" }
+snacking2 = { group = "com.github.eriffanani", name = "Snacking2", version.ref = "snacking2" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+toastyle = { group = "com.github.eriffanani", name = "Toastyle", version.ref = "preventdoubleclick" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "android-kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
